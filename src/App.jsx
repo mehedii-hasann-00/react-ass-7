@@ -61,7 +61,7 @@ function App() {
     <>
       <ToastContainer />
       <div className="">
-        <div className="flex flex-col lg:flex-row justify-between items-center px-8 mx-8 py-6 text-black">
+        <div className="flex flex-col lg:flex-row justify-between items-center px-8 mx-8 py-4 text-black">
           <h3 className="font-semibold">CS - Ticket System</h3>
           <div className="flex flex-col lg:flex-row gap-4 text-sm my-8 lg:my-4">
             <div className='flex flex-col lg:flex-row gap-4 py-2'>
@@ -152,54 +152,57 @@ function App() {
                 :
                 <p className='text-sm font-light my-4'>No resolved tasks yet.</p>
               }
-
             </div>
-
           </div>
         </div>
       </div>
 
-      <div className='bg-black  flex p-8 justify-between'>
-        <div className='max-w-md'>
-          <h2 className='text-white'>CS -- Ticket System</h2>
-          <p className='py-2 text-sm font-light text-gray-500'>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</p>
-        </div>
-        <div>
-          <h3 className='text-white'>Company</h3>
-          <div className='py-2 text-sm font-light text-gray-500'>
-            <p>About Us</p>
-            <p>Our Mission</p>
-            <p>Contact Sale</p>
+      <div className='bg-black'>
+        <div className='flex p-8 justify-between '>
+          <div className='max-w-md'>
+            <h2 className='text-white'>CS -- Ticket System</h2>
+            <p className='py-2 text-sm font-light text-gray-500'>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</p>
           </div>
+          <div>
+            <h3 className='text-white'>Company</h3>
+            <div className='py-2 text-sm font-light text-gray-500'>
+              <p>About Us</p>
+              <p>Our Mission</p>
+              <p>Contact Sale</p>
+            </div>
 
-        </div>
-        <div>
-          <h3 className='text-white'>Services</h3>
-          <div className='py-2 text-sm font-light text-gray-500'>
-            <p>Products & Services</p>
-            <p>Customer Stories</p>
-            <p>Download Apps</p>
           </div>
+          <div>
+            <h3 className='text-white'>Services</h3>
+            <div className='py-2 text-sm font-light text-gray-500'>
+              <p>Products & Services</p>
+              <p>Customer Stories</p>
+              <p>Download Apps</p>
+            </div>
 
-        </div>
-        <div>
-          <h3 className='text-white'>Information</h3>
-          <div className='py-2 text-sm font-light text-gray-500'>
-            <p>Privacy Policy</p>
-            <p>Terms & Conditions</p>
-            <p>Join Us</p>
           </div>
+          <div>
+            <h3 className='text-white'>Information</h3>
+            <div className='py-2 text-sm font-light text-gray-500'>
+              <p>Privacy Policy</p>
+              <p>Terms & Conditions</p>
+              <p>Join Us</p>
+            </div>
 
-        </div>
-        <div>
-          <h3 className='text-white'>Social Links</h3>
-          <div className='py-2 text-sm font-light text-gray-500'>
-            <p><i class="fa fa-brands fa-square-x-twitter bg-green-300"></i> <span>@CS — Ticket System</span></p>
-            <p><i class="fa fa-brands fa-facebook bg-green-200 mx-2 rounded "></i>@CS — Ticket System</p>
-            <p>@CS — Ticket System</p>
-            <p>@CS — Ticket System</p>
           </div>
+          <div>
+            <h3 className='text-white'>Social Links</h3>
+            <div className='py-2 text-sm font-light text-gray-500'>
+              <p><span>@CS — Ticket System</span></p>
+              <p>@CS — Ticket System</p>
+              <p>@CS — Ticket System</p>
+              <p>@CS — Ticket System</p>
+            </div>
 
+          </div>
+        </div>
+        <div className='border-t border-gray-700 mx-8 py-8 text-center'>
+          <p className='text-white'>© 2025 CS — Ticket System. All rights reserved.</p>
         </div>
       </div>
 
