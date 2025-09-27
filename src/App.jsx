@@ -1,4 +1,6 @@
 import { useState, useEffect } from 'react'
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 function App() {
   const [count, setCount] = useState(0);
@@ -24,6 +26,10 @@ function App() {
     });
   };
 
+  const notify = (msg) => {
+    toast.success(msg);
+  };
+
   const handle_in_progess = (t) => {
     if (taskInProgess.length > 0) {
       let found = false;
@@ -40,17 +46,20 @@ function App() {
     else {
       setTaskInProgess([{ id: t.id, title: t.title }])
     }
+    notify("Task Added to Progess ...")
   }
 
   const handle_resolve = (task) => {
     setTickets(tickets.filter(t => t.id !== task.id));
     setTaskInProgess(taskInProgess.filter(t => t.id !== task.id));
-    setTaskResolved(prev => [...prev, { title: task.title }])
+    setTaskResolved(prev => [...prev, { title: task.title }]);
+    notify("Task Resolved Successfully");
   }
 
   console.log(taskInProgess);
   return (
     <>
+      <ToastContainer />
       <div className="">
         <div className="flex flex-col lg:flex-row justify-between items-center px-8 mx-8 py-6 text-black">
           <h3 className="font-semibold">CS - Ticket System</h3>
@@ -143,7 +152,7 @@ function App() {
                 :
                 <p className='text-sm font-light my-4'>No resolved tasks yet.</p>
               }
-              
+
             </div>
 
           </div>
