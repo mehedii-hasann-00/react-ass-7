@@ -3,7 +3,6 @@ import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 
 function App() {
-  const [count, setCount] = useState(0);
   const [tickets, setTickets] = useState([]);
   const [taskInProgess, setTaskInProgess] = useState([]);
   const [taskResolved, setTaskResolved] = useState([]);
@@ -56,7 +55,6 @@ function App() {
     notify("Task Resolved Successfully");
   }
 
-  console.log(taskInProgess);
   return (
     <>
       <ToastContainer />
@@ -64,7 +62,7 @@ function App() {
         <div className="flex flex-col lg:flex-row justify-between items-center px-8 mx-8 py-4 text-black">
           <h3 className="font-semibold">CS - Ticket System</h3>
           <div className="flex flex-col lg:flex-row gap-4 text-sm my-8 lg:my-4">
-            <div className='flex flex-col lg:flex-row gap-4 py-2'>
+            <div className='lg:flex hidden lg:flex-row gap-4 py-2'>
               <p>Home</p>
               <p>FAQ</p>
               <p>ChangeLog</p>
@@ -74,25 +72,28 @@ function App() {
             </div>
             <button className="bg-gradient-to-r from-purple-700 to-purple-500 text-white px-4 py-2 rounded">+ New Ticket</button>
           </div>
-
         </div>
       </div>
       <div className='bg-gray-100 p-8'>
-        <div className='grid grid-cols-2 gap-8 text-center'>
-          <div className='bg-gradient-to-br from-purple-700 to-purple-500 text-white p-16 rounded'>
+        <div className='grid lg:grid-cols-2 grid-cols-1 lg:gap-8 gap-4 text-center'>
+          <div className='relative bg-gradient-to-br from-purple-700 to-purple-500 text-white p-16 rounded'>
+            <img src="./vector1.png" alt="" className='absolute top-0 left-0' />
+            <img src="./vector1.png" alt="" className='absolute rotate-y-180 top-0 right-0' />
             <h3 className='text-lg font-semibold'>In Progess</h3>
             <p className='my-4 text-6xl font-bold'>{taskInProgess.length}</p>
           </div>
-          <div className='bg-gradient-to-r from-green-700 to-green-500 text-white p-16 rounded'>
+          <div className='relative bg-gradient-to-r from-green-700 to-green-500 text-white p-16 rounded'>
+            <img src="./vector1.png" alt="" className='absolute top-0 left-0' />
+            <img src="./vector1.png" alt="" className='absolute rotate-y-180 top-0 right-0' />
             <h3 className='text-lg font-semibold'>Resolved</h3>
             <p className='my-4 text-6xl font-bold'>{taskResolved.length}</p>
           </div>
         </div>
-        <div className='flex my-8 gap-8 py-8'>
-          <div className='w-2/3'>
+        <div className='lg:flex my-8 gap-8 py-8'>
+          <div className='w-full lg:w-2/3'>
             <h2 className='text-xl font-semibold mb-4'>Customer Tickets</h2>
             {tickets && tickets.length > 0 ?
-              <div className='grid grid-cols-2 gap-4'>
+              <div className='grid lg:grid-cols-2 grid-cols-1 gap-4'>
                 {tickets.map(t => (
                   <div key={t.id} className=" rounded-lg border border-gray-200 shadow-lg p-4 bg-white cursor-pointer" onClick={() => handle_in_progess(t)}>
                     <div className="flex justify-between items-center">
@@ -127,7 +128,7 @@ function App() {
               </div>
               : null}
           </div>
-          <div className='w-1/3'>
+          <div className='w-full lg:w-1/3 mt-4 lg:mt-0'>
             <div>
               <h2 className='text-xl font-semibold'>Task Status</h2>
               {taskInProgess && taskInProgess.length > 0 ?
@@ -158,7 +159,7 @@ function App() {
       </div>
 
       <div className='bg-black'>
-        <div className='flex p-8 justify-between '>
+        <div className='lg:flex p-8 justify-between '>
           <div className='max-w-md'>
             <h2 className='text-white'>CS -- Ticket System</h2>
             <p className='py-2 text-sm font-light text-gray-500'>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</p>
