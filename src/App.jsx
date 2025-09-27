@@ -62,18 +62,30 @@ function App() {
                   <div key={t.id} class=" rounded-lg border border-gray-200 shadow-lg p-4 bg-white">
                     <div class="flex justify-between items-center">
                       <h2 class="text-lg font-medium text-gray-900">{t.title}</h2>
-                      <span class="text-green-500 text-sm">{t.status}</span>
+                      {t.status && t.status === "Open" ?
+                        <span class="text-green-500 text-sm p-2 bg-green-100 rounded-full flex items-center">
+                          <span className="w-2.5 h-2.5 bg-green-600 rounded-full mr-2"></span>
+                          {t.status}
+                        </span>
+                        :
+                        <span class="text-yellow-500 text-sm p-2 bg-yellow-100 rounded-full flex items-center">
+                          <span className="w-2.5 h-2.5 bg-yellow-600 rounded-full mr-2"></span>
+                          {t.status}
+                        </span>
+                      }
                     </div>
+
+
                     <p class="text-gray-600 mt-2 line-clamp-2 text-sm">{t.description}</p>
                     <div class="mt-4 flex justify-between items-center">
                       <div>
-                        <span class=" font-sm">{t.id}</span>
-                        <span className={`${t.priority && t.priority==="High" ? "text-red-600" : t.priority==="Low" ? "text-green-600":"text-yellow-600"} font-bold mx-4`}>{t.priority} PRIORITY</span>
+                        <span class="text-sm">{t.id}</span>
+                        <span className={`${t.priority && t.priority === "High" ? "text-red-600" : t.priority === "Low" ? "text-green-600" : "text-yellow-600"} text-sm mx-4`}>{t.priority} PRIORITY</span>
                       </div>
 
                       <div class="flex items-center space-x-2">
-                        <span class="text-gray-500">{t.customer}</span>
-                        <span class="text-gray-400 text-sm">{formatDate(t.createdAt)}</span>
+                        <span class="text-gray-500 text-sm">{t.customer}</span>
+                        <span class="text-gray-400 text-sm"><span><i className="fa fa-thin fa-calendar pr-2"></i></span>{formatDate(t.createdAt)}</span>
                       </div>
                     </div>
                   </div>
